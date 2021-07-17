@@ -1,4 +1,4 @@
-"user": [
+{"user": [
   { "name": "Adam",
     "address": "London",
     "email": "adam@email.com",
@@ -16,5 +16,5 @@
     "email": "Jane@gmail.com",
     "contact": "8057576",
     "id": 3
-  },
-]
+  }
+]}
