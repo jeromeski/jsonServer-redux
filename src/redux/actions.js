@@ -7,8 +7,8 @@ const getUsers = ( users ) => ({
 })
 
 export const loadUsers = () => {
-  return async function(dispatch){
-    await axios.get(`${process.env.REACT_APP_API}`)
+  return function(dispatch){
+    axios.get(`${process.env.REACT_APP_API}`)
       .then((res) => {
         console.log(res);
         dispatch(getUsers(res.data));

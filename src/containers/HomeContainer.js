@@ -7,13 +7,13 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import { loadUsers } from "../redux/actions";
-import { useDispatch, useSelector } from "react-redux";
+import { loadUsers } from '../redux/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
-  },
+    minWidth: 650
+  }
 });
 
 function createData(name, email, contact, address, action) {
@@ -25,22 +25,23 @@ const rows = [
   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
   createData('Eclair', 262, 16.0, 24, 6.0),
   createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
+  createData('Gingerbread', 356, 16.0, 49, 3.9)
 ];
 
 export default function HomeContainer() {
-
-  const {users} = useSelector((state) => ({...state}));
+  const { users } = useSelector((state) => ({ ...state }));
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(loadUsers())
-  },[])
+    dispatch(loadUsers());
+  }, []);
 
-  console.log(users)
+  console.log(users);
+
+  // const rows = users.map((user) => createData())
 
   const classes = useStyles();
-  console.log(process.env.REACT_APP_API)
+
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
